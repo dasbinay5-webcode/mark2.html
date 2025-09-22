@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minerva - For A Better You</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="popup.css" />
+    <link rel="stylesheet" href="dynamic2.css" />
+    <link rel="stylesheet" href="sizeing.css">
+    <link rel="icon" href="path/to/your/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="navbar-left">
+            <a href="#" class="logo-container">
+                <img src="logo minerva.jpg" alt="Minerva Logo" class="minerva-logo">
+            </a>
+            <button class="hamburger" id="hamburger">&#9776;</button>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#mentors">Mentors</a></li>
+                    <li><a href="#about-us">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="navbar-right">
+            <div class="search-bar">
+                <input type="text" placeholder="Search courses...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <a href="#signup" class="signup-btn" id="signupBtn">Sign Up / Log In</a>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="logo-popup-overlay" id="logoPopupOverlay">
+            <div class="logo-popup-content">
+                <img src="logo minerva.jpg" alt="Minerva Logo" class="minerva-popup-logo">
+            </div>
+        </div>
+
+        <section id="home" class="landing-page">
+            <div class="main-frame-container">
+                <div class="main-frame-carousel" id="mainFrameCarousel">
+                    <div class="carousel-item active">
+                        <img src="personal.webp" alt="Personal Development">
+                        <div class="carousel-caption">
+                            <h3>Unlock Your Potential</h3>
+                            <p>Discover courses tailored for your personal growth.</p>
+                            <button class="cta-button">Explore Courses</button>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="fitness.jpg" alt="Health and Fitness">
+                        <div class="carousel-caption">
+                            <h3>Health & Fitness Mastery</h3>
+                            <p>Achieve your wellness goals with expert guidance.</p>
+                            <button class="cta-button">Get Started</button>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="finance.webp" alt="Financial Literacy">
+                        <div class="carousel-caption">
+                            <h3>Master Your Finances</h3>
+                            <p>Build a secure future with personal finance courses.</p>
+                            <button class="cta-button">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control prev" id="prevSlide">&#10094;</button>
+                <button class="carousel-control next" id="nextSlide">&#10095;</button>
+                <div class="carousel-indicators">
+                    <span class="indicator active" data-slide="0"></span>
+                    <span class="indicator" data-slide="1"></span>
+                    <span class="indicator" data-slide="2"></span>
+                </div>
+            </div>
+
+            <div class="sub-frames-container">
+                <div class="sub-frame">
+                    <img src="relationship.jpg" alt="Relationship Icon">
+                    <h4>Relationship Building</h4>
+                    <p>Enhance your connections.</p>
+                    <a href="#courses" class="sub-frame-link">Explore →</a>
+                </div>
+                <div class="sub-frame">
+                    <img src="communication.png" alt="Communication Icon">
+                    <h4>Effective Communication</h4>
+                    <p>Speak with confidence.</p>
+                    <a href="#courses" class="sub-frame-link">Explore →</a>
+                </div>
+                <div class="sub-frame">
+                    <img src="ai.png" alt="AI Use Icon">
+                    <h4>AI for Productivity</h4>
+                    <p>Leverage AI in your daily life.</p>
+                    <a href="#courses" class="sub-frame-link">Explore →</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="courses" class="page-section">
+            <h2>Our Courses</h2>
+            <p class="section-subtitle">Explore a wide range of self-development courses</p>
+            <div class="course-categories">
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Relationship Skills</h3>
+                    <p>Learn to build and maintain healthy relationships.</p>
+                    <button class="view-course">View Courses</button>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-user"></i></div>
+                    <h3>Personal Life</h3>
+                    <p>Strategies for personal well-being and happiness.</p>
+                    <button class="view-course">View Courses</button>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-dumbbell"></i></div>
+                    <h3>Health and Fitness</h3>
+                    <p>Expert guidance for a healthier lifestyle.</p>
+                    <button class="view-course">View Courses</button>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Personal Finance</h3>
+                    <p>Master your money and achieve financial freedom.</p>
+                    <button class="view-course">View Courses</button>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-comments"></i></div>
+                    <h3>Communication</h3>
+                    <p>Improve your verbal and non-verbal communication skills.</p>
+                    <button class="view-course">View Courses</button>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h3>Work Life Balance</h3>
+                    <p>Achieve harmony between your professional and personal life.</p>
+                    <button class="view-course">View Courses</button>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-robot"></i></div>
+                    <h3>AI Use</h3>
+                    <p>Understand and utilize AI tools for efficiency.</p>
+                    <button class="view-course">View Courses</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="mentors" class="page-section">
+            <h2>Meet Our Mentors</h2>
+            <p class="section-subtitle">Connect with experienced professionals</p>
+            <div class="mentors-container">
+                <!-- Mentor cards would go here -->
+                <div class="mentor-card">
+                    <img src="mentor1.webp" alt="Mentor 1">
+                    <h3>Dr. Sarah Johnson</h3>
+                    <p>Relationship Expert</p>
+                    <div class="mentor-bio">15 years experience in counseling and relationship coaching</div>
+                </div>
+                <!-- More mentor cards -->
+            </div>
+        </section>
+
+        <section id="about-us" class="page-section">
+            <h2>About Minerva</h2>
+            <p class="section-subtitle">Our mission is to empower you for a better you</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Who We Are</h3>
+                    <p>Minerva is dedicated to providing high-quality personal development resources to help individuals
+                        achieve their full potential in all aspects of life.</p>
+                    <h3>Our Approach</h3>
+                    <p>We combine expert knowledge with practical applications to create transformative learning
+                        experiences.</p>
+                </div>
+                <div class="about-image">
+                    <img src="about-image.jpg" alt="About Minerva">
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter-section">
+            <h3>Stay Updated</h3>
+            <p>Subscribe to our newsletter for the latest courses and tips</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Minerva</h4>
+                <p>For A Better You</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#mentors">Mentors</a></li>
+                    <li><a href="#about-us">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Minerva. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Login/Signup Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <div class="modal-tabs">
+                <button class="tab-btn active" data-tab="login">Login</button>
+                <button class="tab-btn" data-tab="signup">Sign Up</button>
+            </div>
+
+            <div class="tab-content active" id="login">
+                <h2>Welcome Back</h2>
+                <form class="auth-form">
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </form>
+                <div class="social-login">
+                    <p>Or login with</p>
+                    <div class="social-buttons">
+                        <button class="social-btn google"><i class="fab fa-google"></i> Google</button>
+                        <button class="social-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="signup">
+                <h2>Create Account</h2>
+                <form class="auth-form">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Confirm Password" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <div class="terms-notice">
+                    <p>By signing up, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy
+                            Policy</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="popup.js"></script>
+    <script src="dynamic.js"></script>
+</body>
+
+</html>

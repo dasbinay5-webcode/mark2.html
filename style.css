@@ -1,0 +1,575 @@
+/* Google Fonts - optional, for better typography */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --light-sea-blue: #ADD8E6; /* Example: Light Sea Blue */
+    --dark-blue: #00008B; /* Example: Dark Blue */
+    --accent-blue: #007bff; /* A brighter blue for accents */
+    --text-color: #333;
+    --white: #fff;
+    --light-gray: #f4f4f4;
+    --border-color: #ddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-gray);
+    scroll-behavior: smooth;
+}
+
+/* Logo Pop-up Overlay */
+.logo-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.logo-popup-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.logo-popup-content {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeInScale 0.6s ease-out;
+}
+
+.minerva-popup-logo {
+    max-width: 200px;
+    height: auto;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Header/Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, var(--light-sea-blue), var(--dark-blue));
+    padding: 15px 30px;
+    color: var(--white);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 900;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex; /* Ensures logo and any text are aligned if you add text later */
+    align-items: center;
+    margin-right: 20px;
+}
+
+.minerva-logo {
+    width: 120px; /* Adjust size as needed */
+    height: auto;
+    filter: brightness(1.2); /* Make it pop a bit on the blue background */
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links ul li {
+    margin-right: 25px;
+}
+
+.nav-links ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.nav-links ul li a:hover,
+.nav-links ul li a.active {
+    color: var(--accent-blue);
+    border-bottom: 2px solid var(--accent-blue);
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    margin-right: 20px;
+}
+
+.search-bar input {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.search-bar button {
+    background-color: var(--accent-blue);
+    color: var(--white);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3; /* Darker accent blue */
+}
+
+.signup-btn {
+    background-color: var(--white);
+    color: var(--dark-blue);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.signup-btn:hover {
+    background-color: var(--accent-blue);
+    color: var(--white);
+}
+
+/* Main Content Area */
+.content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* Landing Page (Home Section) */
+.landing-page {
+    margin-bottom: 40px;
+}
+
+.main-frame-container {
+    position: relative;
+    width: 100%;
+    height: 450px; /* Adjust height as needed */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    background-color: var(--dark-blue); /* Fallback */
+}
+
+.main-frame-carousel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333; /* Fallback */
+    color: var(--white);
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire area */
+    display: block;
+    opacity: 0.7; /* Slightly dim the image for text readability */
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.carousel-caption h3 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.carousel-caption p {
+    font-size: 1.1rem;
+    color: #f0f0f0;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--white);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 2rem;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+
+.sub-frames-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.sub-frame {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sub-frame:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.sub-frame img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.sub-frame h4 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: var(--dark-blue);
+}
+
+.sub-frame p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* General Section Styling */
+.page-section {
+    padding: 40px 0;
+    text-align: center;
+    background-color: var(--white); /* Example: light background for sections */
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.page-section h2 {
+    font-size: 2.5rem;
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+}
+
+.page-section p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Course Categories */
+.course-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 0 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.category-card {
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.category-card h3 {
+    font-size: 1.5rem;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+.category-card p {
+    font-size: 0.95rem;
+    color: #777;
+    flex-grow: 1; /* Allows text to take up available space */
+    margin-bottom: 15px;
+}
+
+.category-card button {
+    background-color: var(--accent-blue);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.category-card button:hover {
+    background-color: #0056b3;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.4s ease;
+}
+
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 24px;
+  width: 90%;
+  max-width: 360px;
+  border-radius: 12px;
+  position: relative;
+  animation: slideIn 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 22px;
+  color: #555;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  margin-bottom: 16px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 10px;
+  background: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.modal-content button:hover {
+  background: #005fa3;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to right, var(--dark-blue), var(--light-sea-blue));
+    color: var(--white);
+    margin-top: 40px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+
+    .navbar-left {
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    .nav-links ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .nav-links ul li {
+        margin: 5px 15px;
+    }
+
+    .navbar-right {
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .search-bar {
+        width: 80%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .search-bar input {
+        flex-grow: 1;
+    }
+
+    .signup-btn {
+        width: 80%;
+        text-align: center;
+    }
+
+    .main-frame-container {
+        height: 350px;
+    }
+
+    .carousel-caption h3 {
+        font-size: 1.8rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .minerva-logo {
+        width: 100px;
+    }
+
+    .nav-links ul li {
+        margin: 5px 10px;
+    }
+
+    .search-bar {
+        width: 95%;
+    }
+
+    .signup-btn {
+        width: 95%;
+    }
+
+    .main-frame-container {
+        height: 280px;
+    }
+
+    .carousel-caption {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        padding: 10px 15px;
+    }
+
+    .carousel-caption h3 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+
+    .sub-frames-container {
+        grid-template-columns: 1fr;
+    }
+
+    .page-section h2 {
+        font-size: 2rem;
+    }
+
+    .category-card {
+        padding: 15px;
+    }
+}
